@@ -137,3 +137,10 @@ class KillAWatt
     %(#{@xbee.address_16}#{amp_summary}#{watt_summary}#{wh_summary}\n\n)
   end
 end
+
+#Add a to_kill_a_watt method!
+class XbeePacket
+  def to_kill_a_watt
+    KillAWatt.new(self)
+  end
+end
