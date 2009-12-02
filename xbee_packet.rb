@@ -11,7 +11,7 @@ class XbeePacket
       @packet = Array.new(length){ serial_port.getc }
     end
     
-    raise "Invalid Packet" unless @packet && app_id == SERIES1_IOPACKET
+    raise "Invalid XbeePacket" if !@packet || app_id != SERIES1_IOPACKET
   end
   
   def app_id
