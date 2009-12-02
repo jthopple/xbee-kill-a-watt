@@ -4,15 +4,14 @@ class XbeePacket
   SERIES1_IOPACKET = 0x83
   
   def initialize(serial_port)
-    @packet = []
     if serial_port.getc == START_IOPACKET
       lengthMSB = serial_port.getc
       lengthLSB = serial_port.getc
       length = (lengthLSB + (lengthMSB << 8)) + 1
-      length.times{ @packet << serial_port.getc }
+      @packet = Array.new(length){ serial_port.getc }
     end
     
-    raise "Invalid Packet" unless app_id == SERIES1_IOPACKET
+    raise "Invalid Packet" unless @packet && app_id == SERIES1_IOPACKET
   end
   
   def app_id
