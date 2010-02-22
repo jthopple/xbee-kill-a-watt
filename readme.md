@@ -2,4 +2,4 @@
 2. gem install ruby-serialport
 3. ruby wattcher.rb
 
-Myself and a friend built a tweet-a-watt.  We like Ruby.  This is a Ruby subset of the Python code provided for the tweet-a-watt hack.  Enjoy.
+Myself and a (http://github.com/cmeisl "friend") built a tweet-a-watt.  We like Ruby.  This is a Ruby subset of the Python code provided for the tweet-a-watt hack.  Enjoy.
